@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Reports - Jeremiah's Database{% endblock %}
+
+{% block content %}
+<h1>Reports</h1>
+
+<!-- Total Records -->
+<h3>Total Records: {{ total_records }}</h3>
+
+<!-- Export Button -->
+<a href="{% url 'export_csv' %}" class="btn btn-primary mb-3">Export to CSV</a>
+
+<!-- Customers by State -->
+<h3>Customers by State:</h3>
+<canvas id="stateChart" class="mb-3"></canvas>
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th>State</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for state in customers_by_state %}
+    <tr>
+      <td>{{ state.state }}</td>
+      <td>{{ state.count }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- Recently Added Records -->
+<h3>Recently Added Records (Last 7 Days):</h3>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for record in recent_records %}
+    <tr>
+      <td>{{ record.first_name }}</td>
+      <td>{{ record.last_name }}</td>
+      <td>{{ record.email }}</td>
+      <td>{{ record.created_at }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- Chart.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Data for Customers by State Chart
+  const stateCtx = document.getElementById('stateChart').getContext('2d');
+  const stateChart = new Chart(stateCtx, {
+    type: 'bar',
+    data: {
+      labels: [{% for state in customers_by_state %}"{{ state.state }}",{% endfor %}],
+      datasets: [{
+        label: 'Customers by State',
+        data: [{% for state in customers_by_state %}{{ state.count }},{% endfor %}],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+{% endblock %}

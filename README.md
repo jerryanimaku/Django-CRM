@@ -1,1 +1,1 @@
-This is a A Django-based web application for managing and displaying records with pagination support. Features include an interactive user interface, efficient database querying, and customizable page views to enhance performance and user experience.
+This is a Django-based web application for managing and displaying records with pagination support. Features include an interactive user interface, efficient database querying, and customizable page views to enhance performance and user experience.

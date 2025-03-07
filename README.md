@@ -25,8 +25,6 @@ Add Record Page:
 
 ![Add Record I](https://github.com/user-attachments/assets/65ce7cef-1ac8-475f-9e66-54c7f295be94)
 
-![Add Record II](https://github.com/user-attachments/assets/db517f15-b34a-4f9e-91f0-f45731666932)
-
 
 Record Added:
 

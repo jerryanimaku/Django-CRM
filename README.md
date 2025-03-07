@@ -5,9 +5,9 @@ Register new User:
 
 ![Register I](https://github.com/user-attachments/assets/8c141224-5f08-4d6e-a292-97fa5b7977f6)
 
-![Register 2](https://github.com/user-attachments/assets/29b9c82f-41fa-4dd4-9ba0-c3a745301aae)
-
 ![Register II](https://github.com/user-attachments/assets/af28d485-9f51-4df6-9a3a-966496d74535)
+
+![Register 2](https://github.com/user-attachments/assets/29b9c82f-41fa-4dd4-9ba0-c3a745301aae)
 
 
 Home Page:
